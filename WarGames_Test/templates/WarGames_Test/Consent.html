@@ -1,0 +1,17 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Welcome to WarGames (Demo)!
+{% endblock %}
+
+{% block content %}
+
+<p> In this demo, six users will be randomly divided into teams of three. One person in each team will be assigned leader and the other two will be advisors. This limited demo only includes autocracies. </p>
+
+<p> The next screen will let you know what team you are assigned to, and what role you have. This page would usually ask for your consent, but since you are fellow members of the research team, I will skip that… </p>
+
+
+{% next_button %}
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "global/Base.html" %}{% load staticfiles otree_tags %}{% block title %}    Let’s Make a Deal{% endblock %}{% block content %}
+
+{% if player.team == 1 %}
+<p> Welcome team <b>{{player.team_name}}</b> </p>
+
+<p> Here is what the advisors suggest: </p>
+
+<br>
+
+{% if player.role != 1 %}
+
+<p>You think <b>we should try to keep {{ player.advice_1 }}</b><p>
+<p>The other advisor says:</p>
+{% endif %}
+
+
+{% for p in player.get_others_in_group %}
+{% if p.team == 1 and p.role != 1 %}
+	<p><b> We should try to keep {{ p.advice_1 }} </b></p>
+	<br>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+
+
+
+{% if player.team == 2 %}
+<p> Welcome team <b>{{player.team_name}}</b> </p>
+
+<p> Here is what the advisors suggest: </p>
+
+<br>
+
+{% if player.role != 1 %}
+
+<p>You think <b>we should try to keep {{ player.advice_1 }}</b><p>
+<p>The other advisor says:</p>
+{% endif %}
+
+
+{% for p in player.get_others_in_group %}
+{% if p.team == 2 and p.role != 1 %}
+	<p><b> We should try to keep {{ p.advice_1 }} </b></p>
+	<br>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+    
+
+{% if player.role = 1 %}
+
+<p> Fearless leader, now that you know what your group thinks, how much of your treasure chest do you think you should try to keep? Please make an offer to team terrible below. If you ask for too much, you might have to go to war with team terrible, and you might lose everything!</p>
+
+<p> So how much will you ask to keep? </p>
+{% formfield player.offer_1 %}
+
+{% endif %}
+
+{% next_button %}
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "global/Base.html" %}{% load staticfiles otree_tags %}{% block title %}    Treasure!{% endblock %}{% block content %}{% if player.team == 1 %}    <p> Your team has found a treasure chest in the amount of {{team_1_chest_start}}! Don’t spend it all in one place. </p>    <p> Your opponents on team terrible are trying to take this away from you… You probably can’t hold onto all of it, so you need to bargain over how much you are willing to give them. Lets do that now… </p>{% next_button %}
+{% endif %}
+
+
+{% if player.team == 2 %}    <p> Your team has found a treasure chest in the amount of {{team_2_chest_start}}! Don’t spend it all in one place. </p>    <p> Your opponents on team terrible are trying to take this away from you… You probably can’t hold onto all of it, so you need to bargain over how much you are willing to give them. Lets do that now… </p>{% next_button %}
+{% endif %}
+{% endblock %}

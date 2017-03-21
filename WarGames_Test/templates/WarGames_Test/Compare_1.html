@@ -1,0 +1,19 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Results - What happened?
+{% endblock %}
+
+
+{% block content %}
+
+<p><b>Results</b></p>
+
+<p>The total amount requested was <b>{{group.total_requested_1}}</b></p>
+
+<p>That means <b>{{group.agreement_status_1}}</b></p>
+
+{% next_button %}
+
+{% endblock %}

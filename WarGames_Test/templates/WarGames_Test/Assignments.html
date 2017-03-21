@@ -1,0 +1,22 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Role Assignment
+{% endblock %}
+
+{% block content %}
+
+
+<p> Congratulations, you are a member of team <b>{{player.team_name}}</b> which is undoubtedly the best team. </p>
+
+
+<p> Your role on team {{player.team_name}} is <b>{{player.role_name}}</b> </p>
+
+<br>
+<p>Leaders make decisions</p>
+<p>Advisors offer suggestions (but are just as good!)</p>
+
+{% next_button %}
+
+{% endblock %}

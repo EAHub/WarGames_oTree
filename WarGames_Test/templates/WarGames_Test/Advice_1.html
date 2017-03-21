@@ -1,0 +1,10 @@
+{% extends "global/Base.html" %}{% load staticfiles otree_tags %}{% block title %}    Advice{% endblock %}{% block content %}
+
+{% if player.role == 1 %}
+<p> Hello fearless leader, your underlings are coming up with suggestions for you. The next page will ask you to wait for all of their suggestions to come in. You will automatically move on from there to see their suggestions when they are all ready for you. Go ahead and hit ‘next’ below to begin waiting for them.</p>
+
+{% next_button %}
+{% endif %}{% if player.role != 1 %}<p> Your leader needs to know how much of your treasure chest you think you should try to keep. Please make a suggestion below. If you ask for too much, you might have to go to war with team terrible, and you might lose everything! </p>
+	
+<b> So how much will you ask to keep? </b>
+{% formfield player.advice_1 %}{% next_button %}{% endif %}{% endblock %}
